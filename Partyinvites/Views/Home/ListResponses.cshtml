@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Partyinvites.Models.GuestResponse>
+@{
+    Layout = null;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>List</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="panel-body">
+        <h2>List:</h2>
+        <table class="table table-sm table-striped table-bordered">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Phone</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Partyinvites.Models.GuestResponse r in Model)
+                {
+                    <tr>
+                        <td>@r.Name</td>
+                        <td>@r.Email</td>
+                        <td>@r.Phone</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <p><a asp-action="Index">Go Back!</a></p>
+    </div>
+</body>
+</html>
